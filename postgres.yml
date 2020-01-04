@@ -1,4 +1,5 @@
 ---
 - hosts: postgres
   roles:
+    - common
     - postgres

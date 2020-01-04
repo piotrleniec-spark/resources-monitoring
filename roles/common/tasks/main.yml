@@ -1,0 +1,6 @@
+---
+- yum:
+    update_cache: true
+    name: epel-release
+    state: present
+  become: true
