@@ -1,0 +1,13 @@
+LoadPlugin cpu
+LoadPlugin load
+LoadPlugin memory
+
+LoadPlugin write_graphite
+<Plugin write_graphite>
+  <Node graphite_instance>
+    Host "{{ hostvars['graphite_master']['ansible_host'] }}"
+    Port "2003"
+    Prefix "collectd."
+    StoreRates true
+  </Node>
+</Plugin>

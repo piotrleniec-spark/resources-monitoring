@@ -1,0 +1,2 @@
+collectd_user: collectd
+collectd_data_directory: "/home/{{ collectd_user }}/data"

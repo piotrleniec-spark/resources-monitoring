@@ -1,0 +1,23 @@
+---
+- block:
+    - yum:
+        name: collectd
+        state: present
+
+    - user:
+        name: collectd
+        state: present
+
+    - template:
+        src: collectd.conf.j2
+        dest: /etc/collectd.conf
+
+    - template:
+        src: collectd.service.j2
+        dest: /usr/lib/systemd/system/collectd.service
+
+    - systemd:
+        name: collectd
+        state: restarted
+        daemon_reload: true
+  become: true
