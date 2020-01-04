@@ -1,6 +1,11 @@
 ---
-- yum:
-    update_cache: true
-    name: epel-release
-    state: present
+- block:
+    - yum:
+        update_cache: true
+        name: epel-release
+        state: present
+
+    - selinux:
+        state: permissive
+        policy: targeted
   become: true
