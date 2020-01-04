@@ -1,0 +1,11 @@
+---
+- postgresql_table:
+    db: postgres
+    name: events
+    columns:
+      - id bigserial primary key
+      - source bigint not null
+      - data text not null
+    state: present
+  become: true
+  become_user: postgres

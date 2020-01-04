@@ -1,0 +1,15 @@
+---
+- stat:
+    path: /var/lib/pgsql/data/pg_hba.conf
+  register: pg_data_directory
+  become: true
+
+- command: postgresql-setup initdb
+  become: true
+  become_user: postgres
+  when: not pg_data_directory.stat.exists
+
+- systemd:
+    name: postgresql
+    state: started
+  become: true

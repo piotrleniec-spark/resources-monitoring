@@ -1,0 +1,28 @@
+---
+- block:
+  - yum:
+      name: epel-release
+      state: present
+
+  - yum:
+      name:
+        - gcc
+      state: present
+
+  - yum:
+      name:
+        - postgresql-server
+        - postgresql-contrib
+        - postgresql-devel
+      state: present
+
+  - yum:
+      name:
+        - python-devel
+        - python-pip
+      state: present
+
+  - pip:
+      name: psycopg2
+      state: present
+  become: true
