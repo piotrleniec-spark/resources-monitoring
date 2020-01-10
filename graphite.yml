@@ -1,0 +1,6 @@
+---
+- hosts: graphite
+  roles:
+    - common
+    - collectd
+    - graphite

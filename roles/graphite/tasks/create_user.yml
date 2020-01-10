@@ -1,0 +1,7 @@
+---
+- user:
+    name: "{{ graphite_user }}"
+    state: present
+    groups:
+      - docker
+  become: true

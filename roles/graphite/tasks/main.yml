@@ -1,0 +1,4 @@
+---
+- import_tasks: install_docker.yml
+- import_tasks: create_user.yml
+- import_tasks: install_database.yml

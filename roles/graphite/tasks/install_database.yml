@@ -1,0 +1,12 @@
+---
+- docker_container:
+    name: graphite
+    image: graphiteapp/graphite-statsd:1.1.6-1
+    restart_policy: always
+    volumes:
+      - /home/{{ graphite_user }}/graphite-storage:/opt/graphite/storage
+    ports:
+      - 80:80
+      - 2003:2003
+  become: true
+  become_user: "{{ graphite_user }}"

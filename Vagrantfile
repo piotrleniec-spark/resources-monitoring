@@ -70,6 +70,11 @@ Vagrant.configure("2") do |config|
 
   config.vm.define :postgres do |postgres|
     postgres.vm.box = 'centos/7'
-    config.vm.network 'private_network', ip: '192.168.33.10'
+    postgres.vm.network 'private_network', ip: '192.168.33.10'
+  end
+
+  config.vm.define :graphite do |graphite|
+    graphite.vm.box = 'centos/7'
+    graphite.vm.network 'private_network', ip: '192.168.33.11'
   end
 end

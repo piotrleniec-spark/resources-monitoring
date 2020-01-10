@@ -3,4 +3,7 @@ ansible_ssh_common_args='-o StrictHostKeyChecking=no'
 ansible_user=vagrant
 
 [postgres]
-master ansible_host=192.168.33.10 ansible_ssh_private_key_file=.vagrant/machines/postgres/virtualbox/private_key
+postgres_master ansible_host=192.168.33.10 ansible_ssh_private_key_file=.vagrant/machines/postgres/virtualbox/private_key
+
+[graphite]
+graphite_master ansible_host=192.168.33.11 ansible_ssh_private_key_file=.vagrant/machines/graphite/virtualbox/private_key
