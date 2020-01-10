@@ -8,4 +8,7 @@
     - selinux:
         state: permissive
         policy: targeted
+
+    - hostname:
+        name: "{{ inventory_hostname }}"
   become: true
